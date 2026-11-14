@@ -1,0 +1,3260 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>صنایع دستی قضاوی | هنر اصیل اصفهان</title>
+
+  <meta
+    name="description"
+    content="صنایع دستی قضاوی؛ روایت هنر اصیل اصفهان در میناکاری، قلم‌زنی، خاتم‌کاری و صنایع دستی ایرانی."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+  </script>
+
+
+  <style>
+
+    :root {
+
+      --turquoise: #087f7b;
+      --turquoise-dark: #055b59;
+      --turquoise-deep: #034544;
+      --turquoise-light: #38b7ae;
+
+      --gold: #c99a3d;
+      --gold-light: #e3bd69;
+      --gold-dark: #8e671f;
+
+      --cream: #f7f4ec;
+      --cream-2: #eee9dc;
+
+      --white: #ffffff;
+
+      --text: #203333;
+      --muted: #6c7775;
+
+      --shadow:
+        0 25px 70px rgba(3, 69, 68, .13);
+
+      --radius: 28px;
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      font-family:
+        "Vazirmatn",
+        Tahoma,
+        sans-serif;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f7f4ec 0%,
+          #ffffff 40%,
+          #f2eee4 100%
+        );
+
+      color: var(--text);
+
+      overflow-x: hidden;
+
+    }
+
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      z-index: -1;
+
+      opacity: .25;
+
+      background-image:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(8,127,123,.12) 0,
+          transparent 30%
+          
+        ),
+        radial-gradient(
+          circle at 80% 70%,
+          rgba(201,154,61,.12) 0,
+          transparent 30%
+        );
+
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    button {
+      font-family: inherit;
+    }
+
+
+    img {
+    
+      max-width: 100%;
+    }
+
+
+    .container {
+
+      width: min(1200px, 92%);
+
+      margin-inline: auto;
+
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .nav {
+
+      position: fixed;
+
+      top: 18px;
+
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: min(1180px, 94%);
+
+      z-index: 1000;
+
+      background:
+        rgba(255,255,255,.78);
+
+      backdrop-filter: blur(20px);
+
+      -webkit-backdrop-filter: blur(20px);
+
+      border:
+        1px solid rgba(8,127,123,.16);
+
+      border-radius: 22px;
+
+      box-shadow:
+        0 15px 45px rgba(0,0,0,.08);
+
+    }
+
+
+    .nav-inner {
+
+      min-height: 72px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding: 0 20px;
+
+    }
+
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 11px;
+
+      font-weight: 900;
+
+      color: var(--turquoise-deep);
+
+      white-space: nowrap;
+
+    }
+
+
+    .brand-symbol {
+
+      width: 38px;
+
+      height: 38px;
+
+      border-radius: 50%;
+
+      display: grid;
+
+      place-items: center;
+
+      color: var(--gold-light);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--turquoise-deep),
+          var(--turquoise)
+        );
+
+      box-shadow:
+        0 7px 20px rgba(8,127,123,.25);
+
+    }
+
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 22px;
+
+    }
+
+
+    .nav-links a {
+
+      position: relative;
+
+      color: #40514f;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      transition: .25s;
+
+    }
+
+
+    .nav-links a:hover {
+
+      color: var(--turquoise);
+
+    }
+
+
+    .nav-links a::after {
+
+      content: "";
+
+      position: absolute;
+
+      right: 0;
+
+      bottom: -8px;
+
+      width: 0;
+
+      height: 2px;
+
+      background: var(--gold);
+
+      transition: .25s;
+
+    }
+
+
+    .nav-links a:hover::after {
+
+      width: 100%;
+
+    }
+
+
+    .mobile-menu {
+
+      display: none;
+
+      border: 0;
+
+      background: transparent;
+
+      font-size: 27px;
+
+      color: var(--turquoise-deep);
+
+      cursor: pointer;
+
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  align-items: center;
+  padding: 150px 0 80px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(247,244,236,.96) 0%,
+      rgba(247,244,236,.72) 45%,
+      rgba(247,244,236,.25) 100%
+    ),
+    url("images/hero-bg.png") center / cover no-repeat;
+
+    }
+
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 650px;
+
+      height: 650px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(8,127,123,.18),
+          transparent 68%
+        );
+
+      top: 0;
+
+      left: -200px;
+
+      pointer-events: none;
+
+    }
+
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+
+      height: 500px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(201,154,61,.15),
+          transparent 70%
+        );
+
+      bottom: -200px;
+
+      right: -150px;
+
+      pointer-events: none;
+
+    }
+
+
+    .hero-grid {
+
+      width: min(1200px, 92%);
+
+      margin-inline: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 45px;
+
+      align-items: center;
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 3;
+
+    }
+
+
+    .eyebrow {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--turquoise);
+
+      font-weight: 800;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .eyebrow::before {
+
+      content: "";
+
+      width: 38px;
+
+      height: 2px;
+
+      background: var(--gold);
+
+    }
+
+
+    .hero h1 {
+
+      font-family:
+        "Noto Naskh Arabic",
+        serif;
+
+      color: var(--turquoise-deep);
+
+      font-size:
+        clamp(48px, 8vw, 92px);
+
+      line-height: .98;
+
+      font-weight: 700;
+
+      margin-bottom: 22px;
+
+    }
+
+
+    .hero h1 span {
+
+      color: var(--gold-dark);
+
+    }
+
+
+    .hero-description {
+
+      color: var(--muted);
+
+      max-width: 590px;
+
+      font-size:
+        clamp(15px, 2vw, 18px);
+
+      line-height: 2.1;
+
+      margin-bottom: 30px;
+
+    }
+
+
+    .hero-actions {
+
+      display: flex;
+
+      gap: 13px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    .btn {
+
+      border: 0;
+
+      border-radius: 14px;
+
+      padding: 14px 24px;
+
+      cursor: pointer;
+
+      font-weight: 800;
+
+      transition:
+        transform .25s,
+        box-shadow .25s;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+    }
+
+
+    .btn:hover {
+
+      transform: translateY(-3px);
+
+    }
+
+
+    .btn-primary {
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--turquoise),
+          var(--turquoise-deep)
+        );
+
+      box-shadow:
+        0 15px 35px rgba(8,127,123,.25);
+
+    }
+
+
+    .btn-gold {
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--gold-light),
+          var(--gold-dark)
+        );
+
+      box-shadow:
+        0 15px 35px rgba(201,154,61,.22);
+
+    }
+
+
+    .hero-visual {
+
+      min-height: 600px;
+
+      position: relative;
+
+    }
+
+
+    #scene {
+
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      display: block;
+
+    }
+
+
+    .floating-card {
+
+      position: absolute;
+
+      left: 5%;
+
+      bottom: 50px;
+
+      width: 230px;
+
+      padding: 18px;
+
+      border-radius: 20px;
+
+      background:
+        rgba(255,255,255,.86);
+
+      border:
+        1px solid rgba(8,127,123,.16);
+
+      box-shadow: var(--shadow);
+
+      backdrop-filter: blur(15px);
+
+    }
+
+
+    .floating-card small {
+
+      display: block;
+
+      color: var(--muted);
+
+      margin-bottom: 5px;
+
+    }
+
+
+    .floating-card strong {
+
+      color: var(--turquoise-deep);
+
+      font-size: 18px;
+
+    }
+
+
+    .floating-card::before {
+
+      content: "";
+
+      display: block;
+
+      width: 35px;
+
+      height: 3px;
+
+      background: var(--gold);
+
+      margin-bottom: 12px;
+
+    }
+
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    section {
+
+      scroll-margin-top: 100px;
+
+    }
+
+
+    .section {
+
+      padding: 100px 0;
+
+    }
+
+
+    .section-heading {
+
+      text-align: center;
+
+      max-width: 720px;
+
+      margin:
+        0 auto 50px;
+
+    }
+
+
+    .section-heading .small {
+
+      color: var(--turquoise);
+
+      font-weight: 900;
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .section-heading h2 {
+
+      font-family:
+        "Noto Naskh Arabic",
+        serif;
+
+      color: var(--turquoise-deep);
+
+      font-size:
+        clamp(34px, 6vw, 58px);
+
+      line-height: 1;
+
+      margin-bottom: 14px;
+
+    }
+
+
+    .section-heading p {
+
+      color: var(--muted);
+
+      line-height: 2;
+
+    }
+
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .products-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 24px;
+
+    }
+
+
+    .product-card {
+
+      background:
+        rgba(255,255,255,.9);
+
+      border:
+        1px solid rgba(8,127,123,.12);
+
+      border-radius: 25px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 15px 50px rgba(0,0,0,.06);
+
+      transition:
+        transform .35s,
+        box-shadow .35s;
+
+      position: relative;
+
+    }
+
+
+    .product-card:hover {
+
+      transform: translateY(-9px);
+
+      box-shadow:
+        0 25px 60px rgba(3,69,68,.14);
+
+    }
+
+
+    .product-image {
+
+      height: 280px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--turquoise-deep),
+          var(--turquoise)
+        );
+
+    }
+
+
+    .product-image img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: transform .5s;
+
+    }
+
+
+    .product-card:hover
+    .product-image img {
+
+      transform: scale(1.07);
+
+    }
+
+
+    .product-placeholder {
+
+      width: 100%;
+
+      height: 100%;
+
+      display: grid;
+
+      place-items: center;
+
+      color: var(--gold-light);
+
+      font-size: 50px;
+
+      font-weight: 900;
+
+      background:
+        radial-gradient(
+          circle at center,
+          #087f7b,
+          #034544
+        );
+
+    }
+
+
+    .product-info {
+
+      padding: 21px;
+
+    }
+
+
+    .product-category {
+
+      color: var(--turquoise);
+
+      font-size: 13px;
+
+      font-weight: 900;
+
+    }
+
+
+    .product-info h3 {
+
+      color: var(--turquoise-deep);
+
+      font-size: 21px;
+
+      margin: 7px 0;
+
+    }
+
+
+    .product-info p {
+
+      color: var(--muted);
+
+      line-height: 1.9;
+
+      font-size: 14px;
+
+      min-height: 50px;
+
+    }
+
+
+    .product-bottom {
+
+      margin-top: 18px;
+
+      padding-top: 15px;
+
+      border-top:
+        1px solid #eee;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+    }
+
+
+    .product-price {
+
+      color: var(--gold-dark);
+
+      font-weight: 900;
+
+    }
+
+
+    .product-stock {
+
+      color: var(--muted);
+
+      font-size: 12px;
+
+    }
+
+
+    .empty-products {
+
+      grid-column: 1 / -1;
+
+      text-align: center;
+
+      padding: 60px 20px;
+
+      border:
+        1px dashed rgba(8,127,123,.3);
+
+      border-radius: 22px;
+
+      color: var(--muted);
+
+    }
+
+
+    /* =========================
+       ESFAHAN
+    ========================= */
+
+    .esfahan {
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--turquoise-deep),
+          #076f6b
+        );
+
+      color: white;
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+    .esfahan::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 700px;
+
+      height: 700px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(255,255,255,.08);
+
+      top: -300px;
+
+      left: -200px;
+
+    }
+
+
+    .esfahan .section-heading h2 {
+
+      color: white;
+
+    }
+
+
+    .esfahan .section-heading p {
+
+      color: rgba(255,255,255,.72);
+
+    }
+
+
+    .landmarks {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 20px;
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+
+    .landmark {
+
+      min-height: 300px;
+
+      padding: 25px;
+
+      border:
+        1px solid rgba(255,255,255,.13);
+
+      border-radius: 24px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.12),
+          rgba(255,255,255,.04)
+        );
+
+      backdrop-filter: blur(10px);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: flex-end;
+
+      transition: .35s;
+
+    }
+
+
+    .landmark:hover {
+
+      transform:
+        translateY(-8px);
+
+      border-color:
+        rgba(227,189,105,.6);
+
+    }
+
+
+    .landmark-icon {
+
+      width: 70px;
+
+      height: 70px;
+
+      border-radius: 50%;
+
+      display: grid;
+
+      place-items: center;
+
+      margin-bottom: auto;
+
+      color: var(--gold-light);
+
+      border:
+        1px solid rgba(227,189,105,.5);
+
+      font-size: 28px;
+
+    }
+
+
+    .landmark h3 {
+
+      font-size: 24px;
+
+      margin-bottom: 8px;
+
+    }
+
+
+    .landmark p {
+
+      color: rgba(255,255,255,.7);
+
+      line-height: 1.9;
+
+      font-size: 14px;
+
+    }
+
+
+    /* =========================
+       STORY
+    ========================= */
+
+    .story {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 60px;
+
+      align-items: center;
+
+    }
+
+
+    .story-visual {
+
+      min-height: 470px;
+
+      border-radius: 35px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          #034544,
+          #087f7b
+        );
+
+      box-shadow:
+        0 25px 70px rgba(3,69,68,.2);
+
+    }
+
+
+    .story-arch {
+
+      position: absolute;
+
+      width: 270px;
+
+      height: 360px;
+
+      left: 50%;
+
+      top: 50%;
+
+      transform:
+        translate(-50%,-45%);
+
+      border-radius:
+        140px 140px 0 0;
+
+      border:
+        2px solid rgba(227,189,105,.6);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.1),
+          rgba(255,255,255,.02)
+        );
+
+    }
+
+
+    .story-circle {
+
+      position: absolute;
+
+      width: 150px;
+
+      height: 150px;
+
+      border-radius: 50%;
+
+      left: 50%;
+
+      top: 50%;
+
+      transform:
+        translate(-50%,-50%);
+
+      border:
+        2px solid var(--gold-light);
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(227,189,105,.25),
+          rgba(8,127,123,.1)
+        );
+
+      box-shadow:
+        0 0 80px rgba(227,189,105,.18);
+
+    }
+
+
+    .story-content h2 {
+
+      font-family:
+        "Noto Naskh Arabic",
+        serif;
+
+      font-size:
+        clamp(36px, 6vw, 58px);
+
+      line-height: 1;
+
+      color: var(--turquoise-deep);
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .story-content p {
+
+      color: var(--muted);
+
+      line-height: 2.15;
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .story-highlight {
+
+      margin-top: 25px;
+
+      padding: 20px;
+
+      border-right:
+        4px solid var(--gold);
+
+      background:
+        rgba(8,127,123,.06);
+
+      border-radius: 12px;
+
+      color: var(--turquoise-deep);
+
+      font-weight: 700;
+
+    }
+
+
+    /* =========================
+       ARTISANS
+    ========================= */
+
+    .artisans {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 22px;
+
+    }
+
+
+    .artisan {
+
+      text-align: center;
+
+      background: white;
+
+      border:
+        1px solid #e6e2d8;
+
+      border-radius: 24px;
+
+      padding: 30px 20px;
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,.05);
+
+      transition: .3s;
+
+    }
+
+
+    .artisan:hover {
+
+      transform: translateY(-7px);
+
+    }
+
+
+    .artisan-avatar {
+
+      width: 100px;
+
+      height: 100px;
+
+      margin: 0 auto 18px;
+
+      border-radius: 50%;
+
+      display: grid;
+
+      place-items: center;
+
+      font-size: 35px;
+
+      color: var(--gold-light);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--turquoise-deep),
+          var(--turquoise)
+        );
+
+      border:
+        4px solid #eee7d6;
+
+    }
+
+
+    .artisan h3 {
+
+      color: var(--turquoise-deep);
+
+      margin-bottom: 5px;
+
+    }
+
+
+    .artisan span {
+
+      color: var(--gold-dark);
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+    }
+
+
+    .artisan p {
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.9;
+
+      margin-top: 12px;
+
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+
+      background:
+        linear-gradient(
+          135deg,
+          #f0ece1,
+          #ffffff
+        );
+
+    }
+
+
+    .contact-box {
+
+      max-width: 900px;
+
+      margin: auto;
+
+      background: white;
+
+      border:
+        1px solid rgba(8,127,123,.12);
+
+      border-radius: 28px;
+
+      padding: 35px;
+
+      box-shadow: var(--shadow);
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 30px;
+
+    }
+
+
+    .contact-info h2 {
+
+      font-family:
+        "Noto Naskh Arabic",
+        serif;
+
+      color: var(--turquoise-deep);
+
+      font-size: 40px;
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .contact-info p {
+
+      color: var(--muted);
+
+      line-height: 2;
+
+    }
+
+
+    .contact-list {
+
+      margin-top: 22px;
+
+      display: grid;
+
+      gap: 12px;
+
+    }
+
+
+    .contact-item {
+
+      padding: 14px;
+
+      border-radius: 13px;
+
+      background: #f7f5ef;
+
+      color: #4d5c5a;
+
+    }
+
+
+    .contact-item strong {
+
+      color: var(--turquoise-deep);
+
+    }
+
+
+    .contact-form {
+
+      display: grid;
+
+      gap: 12px;
+
+    }
+
+
+    .contact-form input,
+    .contact-form textarea {
+
+      width: 100%;
+
+      border:
+        1px solid #ddd9ce;
+
+      border-radius: 12px;
+
+      padding: 13px;
+
+      font-family: inherit;
+
+      outline: none;
+
+    }
+
+
+    .contact-form textarea {
+
+      min-height: 130px;
+
+      resize: vertical;
+
+    }
+
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+
+      border-color:
+        var(--turquoise);
+
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      background:
+        #023635;
+
+      color: white;
+
+      padding: 40px 0;
+
+    }
+
+
+    .footer-inner {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+    }
+
+
+    .footer-brand {
+
+      font-weight: 900;
+
+      font-size: 20px;
+
+    }
+
+
+    .footer-brand span {
+
+      color: var(--gold-light);
+
+    }
+
+
+    .copyright {
+
+      color:
+        rgba(255,255,255,.55);
+
+      font-size: 13px;
+
+    }
+
+
+    .admin-link {
+
+      color: var(--gold-light);
+
+      font-size: 13px;
+
+      opacity: .75;
+
+    }
+
+
+    /* =========================
+       REVEAL
+    ========================= */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform: translateY(30px);
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+    }
+
+
+    .reveal.show {
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 950px) {
+
+      .nav-links {
+
+        position: absolute;
+
+        top: 78px;
+
+        right: 0;
+
+        left: 0;
+
+        padding: 18px;
+
+        border-radius: 18px;
+
+        background:
+          rgba(255,255,255,.96);
+
+        box-shadow:
+          0 20px 50px rgba(0,0,0,.1);
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+      }
+
+
+      .nav-links.open {
+
+        display: flex;
+
+      }
+
+
+      .mobile-menu {
+
+        display: block;
+
+      }
+
+
+      .hero-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .hero {
+
+        padding-top: 130px;
+
+      }
+
+
+      .hero-visual {
+
+        min-height: 480px;
+
+      }
+
+
+      .products-grid {
+
+        grid-template-columns:
+          repeat(2,1fr);
+
+      }
+
+
+      .landmarks {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .story {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .story-visual {
+
+        min-height: 400px;
+
+      }
+
+
+      .artisans {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .contact-box {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 620px) {
+
+      .nav {
+
+        top: 10px;
+
+        width: 94%;
+
+      }
+
+
+      .nav-inner {
+
+        min-height: 62px;
+
+      }
+
+
+      .brand {
+
+        font-size: 15px;
+
+      }
+
+
+      .brand-symbol {
+
+        width: 32px;
+
+        height: 32px;
+
+      }
+
+
+      .hero {
+
+        padding-top: 105px;
+
+      }
+
+
+      .hero h1 {
+
+        font-size:
+          clamp(43px, 16vw, 70px);
+
+      }
+
+
+      .hero-visual {
+
+        min-height: 380px;
+
+      }
+
+
+      .floating-card {
+
+        left: 2%;
+
+        bottom: 20px;
+
+        width: 190px;
+
+      }
+
+
+      .section {
+
+        padding: 75px 0;
+
+      }
+
+
+      .products-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .product-image {
+
+        height: 260px;
+
+      }
+
+
+      .contact-box {
+
+        padding: 22px;
+
+      }
+
+
+      .footer-inner {
+
+        flex-direction: column;
+
+        text-align: center;
+
+      }
+
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration: .01ms !important;
+
+        transition-duration: .01ms !important;
+
+      }
+
+    }
+/* =========================================
+   LUXURY SOFT SECTION TRANSITIONS
+========================================= */
+
+.hero,
+.section,
+.esfahan,
+.contact {
+  position: relative;
+}
+
+/* -------------------------
+   Hero → Products
+------------------------- */
+
+.hero {
+  overflow: hidden;
+  padding-bottom: 130px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  bottom: -70px;
+  height: 140px;
+
+  background: #f7f4ec;
+
+  border-radius:
+    50% 50% 0 0 /
+    100% 100% 0 0;
+
+  z-index: 5;
+}
+
+
+/* -------------------------
+   Products
+------------------------- */
+
+#products {
+  position: relative;
+  z-index: 6;
+
+  margin-top: -1px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7f4ec 0%,
+      #ffffff 100%
+    );
+
+  border-radius:
+    70px 70px 0 0;
+
+  padding-top: 110px;
+}
+
+
+/* -------------------------
+   Products → Esfahan
+------------------------- */
+
+#products::after {
+  content: "";
+  position: absolute;
+
+  left: -5%;
+  right: -5%;
+  bottom: -70px;
+
+  height: 140px;
+
+  background: #034544;
+
+  border-radius:
+    0 0 50% 50% /
+    0 0 100% 100%;
+
+  z-index: 3;
+}
+
+
+/* -------------------------
+   Esfahan
+------------------------- */
+
+#esfahan {
+  position: relative;
+  z-index: 4;
+
+  margin-top: 1px;
+
+  border-radius:
+    70px 70px 0 0;
+
+  overflow: hidden;
+}
+
+
+/* -------------------------
+   Esfahan → Story
+------------------------- */
+
+#esfahan::after {
+  content: "";
+  position: absolute;
+
+  left: -5%;
+  right: -5%;
+  bottom: -70px;
+
+  height: 140px;
+
+  background: #f7f4ec;
+
+  border-radius:
+    50% 50% 0 0 /
+    100% 100% 0 0;
+
+  z-index: 5;
+}
+
+
+/* -------------------------
+   Story
+------------------------- */
+
+#story {
+  position: relative;
+
+  border-radius:
+    70px 70px 0 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7f4ec,
+      #ffffff
+    );
+}
+
+
+/* -------------------------
+   Story → Artisans
+------------------------- */
+
+#story::after {
+  content: "";
+  position: absolute;
+
+  left: -5%;
+  right: -5%;
+  bottom: -70px;
+
+  height: 140px;
+
+  background: #ffffff;
+
+  border-radius:
+    0 0 50% 50% /
+    0 0 100% 100%;
+
+  z-index: 3;
+}
+
+
+/* -------------------------
+   Artisans
+------------------------- */
+
+#artisans {
+  position: relative;
+
+  background: #ffffff;
+
+  border-radius:
+    70px 70px 0 0;
+}
+
+
+/* -------------------------
+   Artisans → Contact
+------------------------- */
+
+#artisans::after {
+  content: "";
+  position: absolute;
+
+  left: -5%;
+  right: -5%;
+  bottom: -70px;
+
+  height: 140px;
+
+  background: #f0ece1;
+
+  border-radius:
+    0 0 50% 50% /
+    0 0 100% 100%;
+
+  z-index: 3;
+}
+
+
+/* -------------------------
+   Contact
+------------------------- */
+
+#contact {
+  position: relative;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0ece1,
+      #ffffff
+    );
+
+  border-radius:
+    70px 70px 0 0;
+}
+
+
+/* -------------------------
+   Footer transition
+------------------------- */
+
+#contact::after {
+  content: "";
+  position: absolute;
+
+  left: -5%;
+  right: -5%;
+  bottom: -60px;
+
+  height: 120px;
+
+  background: #023635;
+
+  border-radius:
+    0 0 50% 50% /
+    0 0 100% 100%;
+
+  z-index: 3;
+}
+
+
+/* -------------------------
+   Smooth edges
+------------------------- */
+
+section {
+  overflow: hidden;
+}
+
+
+/* -------------------------
+   Mobile
+------------------------- */
+
+@media (max-width: 620px) {
+
+  .hero {
+    padding-bottom: 90px;
+  }
+
+  .hero::after {
+    height: 80px;
+    bottom: -40px;
+  }
+
+  #products,
+  #esfahan,
+  #story,
+  #artisans,
+  #contact {
+    border-radius:
+      38px 38px 0 0;
+  }
+
+  #products {
+    padding-top: 90px;
+  }
+
+  #products::after,
+  #esfahan::after,
+  #story::after,
+  #artisans::after,
+  #contact::after {
+    height: 80px;
+    bottom: -40px;
+  }
+
+}
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAV
+========================= -->
+
+<nav class="nav">
+
+  <div class="nav-inner">
+
+    <a
+      href="#home"
+      class="brand"
+    >
+
+      <span class="brand-symbol">
+        ق
+      </span>
+
+      <span>
+        صنایع دستی قضاوی
+      </span>
+
+    </a>
+
+
+    <button
+      class="mobile-menu"
+      id="mobileMenu"
+      aria-label="منوی سایت"
+    >
+      ☰
+    </button>
+
+
+    <div
+      class="nav-links"
+      id="navLinks"
+    >
+
+      <a href="#home">
+        خانه
+      </a>
+
+      <a href="#products">
+        محصولات
+      </a>
+
+      <a href="#esfahan">
+        هنرهای اصفهان
+      </a>
+
+      <a href="#story">
+        داستان ما
+      </a>
+
+      <a href="#artisans">
+        هنرمندان
+      </a>
+
+      <a href="#contact">
+        تماس با ما
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+  id="home"
+  class="hero"
+>
+
+  <div class="hero-grid">
+
+    <div class="hero-content reveal">
+
+      <div class="eyebrow">
+        میراث هنر اصفهان
+      </div>
+
+
+      <h1>
+        هنرِ دست،
+        <br>
+        <span>جانِ اصفهان</span>
+      </h1>
+
+
+      <p class="hero-description">
+
+        صنایع دستی قضاوی، روایتگر هنر اصیل ایرانی؛
+        جایی که نقش، رنگ، فلز و دست هنرمند
+        در کنار هم خاطره‌ای ماندگار می‌سازند.
+
+      </p>
+
+
+      <div class="hero-actions">
+
+        <a
+          href="#products"
+          class="btn btn-primary"
+        >
+          مشاهده محصولات
+        </a>
+
+
+        <a
+          href="#story"
+          class="btn btn-gold"
+        >
+          داستان ما
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+      <canvas id="scene"></canvas>
+
+
+      <div class="floating-card">
+
+        <small>
+          صنایع دستی اصیل
+        </small>
+
+        <strong>
+          ساخته‌شده با عشق در اصفهان
+        </strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section
+  id="products"
+  class="section"
+>
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <div class="small">
+        گالری محصولات
+      </div>
+
+      <h2>
+        هنر، در جزئیات زنده است
+      </h2>
+
+      <p>
+        مجموعه‌ای از هنرهای اصیل ایرانی که
+        با دستان هنرمندان ساخته شده‌اند.
+      </p>
+
+    </div>
+
+
+    <div
+      id="productGrid"
+      class="products-grid reveal"
+    >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     ESFAHAN
+========================= -->
+
+<section
+  id="esfahan"
+  class="section esfahan"
+>
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <div class="small">
+        شهر هنر
+      </div>
+
+      <h2>
+        اصفهان، نصف جهان
+      </h2>
+
+      <p>
+        از میدان نقش جهان تا پل خواجو،
+        هر گوشه اصفهان داستانی از هنر و فرهنگ ایرانی دارد.
+      </p>
+
+    </div>
+
+
+    <div class="landmarks">
+
+      <article class="landmark reveal">
+
+        <div class="landmark-icon">
+          ◈
+        </div>
+
+        <h3>
+          میدان نقش جهان
+        </h3>
+
+        <p>
+          قلب تاریخی اصفهان و یکی از باشکوه‌ترین
+          میدان‌های جهان؛ الهام‌بخش نقش‌ها و رنگ‌های هنر ایرانی.
+        </p>
+
+      </article>
+
+
+      <article class="landmark reveal">
+
+        <div class="landmark-icon">
+          ║
+        </div>
+
+        <h3>
+          سی‌وسه‌پل
+        </h3>
+
+        <p>
+          شاهکاری از معماری صفوی که بر زاینده‌رود
+          ایستاده و بخشی از هویت تصویری اصفهان است.
+        </p>
+
+      </article>
+
+
+      <article class="landmark reveal">
+
+        <div class="landmark-icon">
+          ≋
+        </div>
+
+        <h3>
+          پل خواجو
+        </h3>
+
+        <p>
+          ترکیبی از معماری، آب و موسیقی؛
+          یکی از ماندگارترین نمادهای فرهنگی شهر اصفهان.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     STORY
+========================= -->
+
+<section
+  id="story"
+  class="section"
+>
+
+  <div class="container">
+
+    <div class="story">
+
+      <div class="story-visual reveal">
+
+        <div class="story-arch"></div>
+
+        <div class="story-circle"></div>
+
+      </div>
+
+
+      <div class="story-content reveal">
+
+        <div class="eyebrow">
+          داستان ما
+        </div>
+
+        <h2>
+          وقتی هنر،
+          <br>
+          روایت می‌شود
+        </h2>
+
+
+        <p>
+
+          صنایع دستی قضاوی با الهام از میراث
+          هنری اصفهان شکل گرفته است؛
+          جایی که هنر تنها یک محصول نیست،
+          بلکه بخشی از زندگی و فرهنگ مردم است.
+
+        </p>
+
+
+        <p>
+
+          از میناکاری و قلم‌زنی گرفته تا خاتم‌کاری
+          و ظروف مسی، هر قطعه حاصل ساعت‌ها
+          دقت، صبر و عشق یک هنرمند است.
+
+        </p>
+
+
+        <div class="story-highlight">
+
+          ما باور داریم یک اثر دست‌ساز،
+          بخشی از داستان سازنده‌اش را با خود حمل می‌کند.
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     ARTISANS
+========================= -->
+
+<section
+  id="artisans"
+  class="section"
+>
+
+  <div class="container">
+
+    <div class="section-heading reveal">
+
+      <div class="small">
+        استادکاران
+      </div>
+
+      <h2>
+        دست‌هایی که هنر می‌آفرینند
+      </h2>
+
+      <p>
+        پشت هر اثر، انسانی ایستاده که سال‌ها
+        برای آموختن و حفظ این هنر تلاش کرده است.
+      </p>
+
+    </div>
+
+
+    <div class="artisans">
+
+      <article class="artisan reveal">
+
+        <div class="artisan-avatar">
+          ✦
+        </div>
+
+        <h3>
+          استاد میناکار
+        </h3>
+
+        <span>
+          هنر میناکاری
+        </span>
+
+        <p>
+          متخصص نقش‌های ظریف و رنگ‌آمیزی
+          سنتی روی ظروف مسی.
+        </p>
+
+      </article>
+
+
+      <article class="artisan reveal">
+
+        <div class="artisan-avatar">
+          ✧
+        </div>
+
+        <h3>
+          استاد قلم‌زن
+        </h3>
+
+        <span>
+          هنر قلم‌زنی
+        </span>
+
+        <p>
+          آفریننده نقش‌های اسلیمی و سنتی
+          با ضربات دقیق قلم بر فلز.
+        </p>
+
+      </article>
+
+
+      <article class="artisan reveal">
+
+        <div class="artisan-avatar">
+          ❖
+        </div>
+
+        <h3>
+          استاد خاتم‌کار
+        </h3>
+
+        <span>
+          هنر خاتم‌کاری
+        </span>
+
+        <p>
+          سازنده نقش‌های هندسی ظریف
+          با قطعات کوچک چوب و فلز.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+  id="contact"
+  class="section contact"
+>
+
+  <div class="container">
+
+    <div class="contact-box reveal">
+
+      <div class="contact-info">
+
+        <div class="eyebrow">
+          ارتباط با ما
+        </div>
+
+        <h2>
+          با قضاوی در ارتباط باشید
+        </h2>
+
+        <p>
+          برای سفارش، همکاری یا دریافت اطلاعات
+          بیشتر درباره محصولات با ما در تماس باشید.
+        </p>
+
+
+        <div class="contact-list">
+
+          <div class="contact-item">
+            <strong>موقعیت:</strong>
+            اصفهان، ایران
+          </div>
+
+          <div class="contact-item">
+            <strong>تلفن:</strong>
+            ۰۳۱-xxxxxxx
+          </div>
+
+          <div class="contact-item">
+            <strong>ایمیل:</strong>
+            info@example.com
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <form
+        class="contact-form"
+        onsubmit="submitContact(event)"
+      >
+
+        <input
+          type="text"
+          placeholder="نام شما"
+          required
+        >
+
+        <input
+          type="email"
+          placeholder="ایمیل"
+          required
+        >
+
+        <textarea
+          placeholder="پیام شما..."
+          required
+        ></textarea>
+
+        <button
+          class="btn btn-primary"
+          type="submit"
+        >
+          ارسال پیام
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+
+        صنایع دستی
+        <span>
+          قضاوی
+        </span>
+
+      </div>
+
+
+      <div class="copyright">
+
+        © ۱۴۰۵ صنایع دستی قضاوی
+        — تمام حقوق محفوظ است.
+
+      </div>
+
+
+      <a
+        class="admin-link"
+        href="admin.html"
+      >
+        ورود به پنل مدیریت
+      </a>
+      <a href="/account.html">حساب کاربری</a>
+      
+      <a href="/account.html">حساب کاربری</a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+const mobileMenu =
+  document.getElementById("mobileMenu");
+
+const navLinks =
+  document.getElementById("navLinks");
+
+
+mobileMenu.addEventListener(
+  "click",
+  () => {
+
+    navLinks.classList.toggle("open");
+
+  }
+);
+
+
+document
+  .querySelectorAll(".nav-links a")
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      () => {
+
+        navLinks.classList.remove("open");
+
+      }
+    );
+
+  });
+
+
+
+/* =========================================
+   PRODUCTS FROM LOCAL STORAGE
+========================================= */
+
+function loadProducts() {
+
+  const products =
+    JSON.parse(
+      localStorage.getItem("qazavi_products")
+      || "[]"
+    );
+
+
+  const activeProducts =
+    products.filter(
+      product => product.active
+    );
+
+
+  const grid =
+    document.getElementById("productGrid");
+
+
+  if (!activeProducts.length) {
+
+    grid.innerHTML = `
+
+      <div class="empty-products">
+
+        هنوز محصولی در پنل مدیریت ثبت نشده است.
+
+        <br><br>
+
+    
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  grid.innerHTML =
+    activeProducts
+      .map(product => {
+
+        const image =
+          product.image
+            ? `
+              <img
+                src="${product.image}"
+                alt="${escapeHTML(product.name)}"
+              >
+            `
+            : `
+              <div class="product-placeholder">
+                قضاوی
+              </div>
+            `;
+
+
+        return `
+
+          <article class="product-card">
+
+            <div class="product-image">
+
+              ${image}
+
+            </div>
+
+
+            <div class="product-info">
+
+              <div class="product-category">
+                ${escapeHTML(product.category)}
+              </div>
+
+
+              <h3>
+                ${escapeHTML(product.name)}
+              </h3>
+
+
+              <p>
+                ${
+                  escapeHTML(
+                    product.description
+                    ||
+                    "هنر اصیل ایرانی از صنایع دستی قضاوی"
+                  )
+                }
+              </p>
+
+
+              <div class="product-bottom">
+
+                <div class="product-price">
+
+                  ${
+                    Number(product.price)
+                      .toLocaleString("fa-IR")
+                  }
+
+                  تومان
+
+                </div>
+
+
+                <div class="product-stock">
+
+                  موجودی:
+                  ${product.stock}
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        `;
+
+      })
+      .join("");
+
+}
+
+
+function escapeHTML(text) {
+
+  return String(text || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+
+}
+
+
+loadProducts();
+
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+function submitContact(event) {
+
+  event.preventDefault();
+
+  alert(
+    "پیام شما ثبت شد. فرم واقعی را بعداً به سیستم ارسال پیام وصل می‌کنیم."
+  );
+
+}
+
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+const revealObserver =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("show");
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold: .12
+    }
+
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(element => {
+
+    revealObserver.observe(element);
+
+  });
+
+
+
+/* =========================================
+   THREE.JS HERO — TRADITIONAL ENGRAVED COPPER VASE
+========================================= */
+
+const canvas = document.getElementById("scene");
+
+if (canvas && typeof THREE !== "undefined") {
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(
+    38,
+    Math.max(canvas.clientWidth, 1) / Math.max(canvas.clientHeight, 1),
+    0.1,
+    100
+  );
+  camera.position.set(0, 0.18, 8.6);
+  camera.lookAt(0, -0.05, 0);
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    alpha: true,
+    antialias: true,
+    powerPreference: "high-performance"
+  });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setSize(canvas.clientWidth || 600, canvas.clientHeight || 600, false);
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
+
+  scene.add(new THREE.HemisphereLight(0xffead2, 0x453027, 1.45));
+  const softbox = new THREE.DirectionalLight(0xffe0b4, 3.2);
+  softbox.position.set(-3.5, 5, 6);
+  scene.add(softbox);
+  const warmRim = new THREE.PointLight(0xff9b55, 95, 18, 2);
+  warmRim.position.set(4, 2.2, -2.5);
+  scene.add(warmRim);
+  const coolFill = new THREE.PointLight(0x8bd1c9, 28, 15, 2);
+  coolFill.position.set(-4, 0, 3);
+  scene.add(coolFill);
+
+  const vaseGroup = new THREE.Group();
+  vaseGroup.position.y = -0.02;
+  scene.add(vaseGroup);
+
+  // Fine hammered-copper surface texture.
+  const textureCanvas = document.createElement("canvas");
+  textureCanvas.width = textureCanvas.height = 256;
+  const ctx = textureCanvas.getContext("2d");
+  const pixels = ctx.createImageData(256, 256);
+  for (let i = 0; i < pixels.data.length; i += 4) {
+    const n = 105 + Math.random() * 100;
+    pixels.data[i] = pixels.data[i + 1] = pixels.data[i + 2] = n;
+    pixels.data[i + 3] = 255;
+  }
+  ctx.putImageData(pixels, 0, 0);
+  const hammerTexture = new THREE.CanvasTexture(textureCanvas);
+  hammerTexture.wrapS = hammerTexture.wrapT = THREE.RepeatWrapping;
+  hammerTexture.repeat.set(3, 2);
+
+  const copper = new THREE.MeshStandardMaterial({
+    color: 0xb96837,
+    metalness: 0.92,
+    roughness: 0.27,
+    bumpMap: hammerTexture,
+    bumpScale: 0.035,
+    side: THREE.DoubleSide
+  });
+  const innerCopper = new THREE.MeshStandardMaterial({
+    color: 0x71391f,
+    metalness: 0.88,
+    roughness: 0.35,
+    side: THREE.DoubleSide
+  });
+  const darkEtch = new THREE.MeshStandardMaterial({
+    color: 0x38251d,
+    metalness: 0.82,
+    roughness: 0.4
+  });
+  const brightCopper = new THREE.MeshStandardMaterial({
+    color: 0xe39a60,
+    metalness: 0.95,
+    roughness: 0.19
+  });
+
+  // Tall bulbous Persian vase: rounded belly, narrow neck and flared mouth.
+  const vaseProfile = [
+    new THREE.Vector2(0.00, -1.48),
+    new THREE.Vector2(0.34, -1.48),
+    new THREE.Vector2(0.47, -1.43),
+    new THREE.Vector2(0.52, -1.32),
+    new THREE.Vector2(0.70, -1.15),
+    new THREE.Vector2(0.91, -0.87),
+    new THREE.Vector2(1.08, -0.53),
+    new THREE.Vector2(1.12, -0.27),
+    new THREE.Vector2(1.04, -0.02),
+    new THREE.Vector2(0.83, 0.17),
+    new THREE.Vector2(0.58, 0.29),
+    new THREE.Vector2(0.43, 0.36),
+    new THREE.Vector2(0.38, 0.49),
+    new THREE.Vector2(0.38, 0.94),
+    new THREE.Vector2(0.43, 1.08),
+    new THREE.Vector2(0.59, 1.14),
+    new THREE.Vector2(0.64, 1.19),
+    new THREE.Vector2(0.62, 1.24),
+    new THREE.Vector2(0.38, 1.22),
+    new THREE.Vector2(0.33, 1.16),
+    new THREE.Vector2(0.31, 1.04),
+    new THREE.Vector2(0.31, 0.51),
+    new THREE.Vector2(0.35, 0.39),
+    new THREE.Vector2(0.57, 0.27),
+    new THREE.Vector2(0.79, 0.10),
+    new THREE.Vector2(0.94, -0.08),
+    new THREE.Vector2(0.98, -0.29),
+    new THREE.Vector2(0.88, -0.58),
+    new THREE.Vector2(0.73, -0.91),
+    new THREE.Vector2(0.57, -1.18),
+    new THREE.Vector2(0.39, -1.31),
+    new THREE.Vector2(0.00, -1.31)
+  ];
+  const body = new THREE.Mesh(new THREE.LatheGeometry(vaseProfile, 180), copper);
+  body.castShadow = true;
+  body.receiveShadow = true;
+  vaseGroup.add(body);
+
+  // Dark inner throat makes the flared opening visibly hollow.
+  const innerThroat = new THREE.Mesh(
+    new THREE.LatheGeometry([
+      new THREE.Vector2(0, 0.58),
+      new THREE.Vector2(0.29, 0.59),
+      new THREE.Vector2(0.30, 0.96),
+      new THREE.Vector2(0.34, 1.13),
+      new THREE.Vector2(0.38, 1.19)
+    ], 120),
+    innerCopper
+  );
+  vaseGroup.add(innerThroat);
+
+  function addRing(radius, tube, y, material) {
+    const mesh = new THREE.Mesh(
+      new THREE.TorusGeometry(radius, tube, 12, 160), material
+    );
+    mesh.rotation.x = Math.PI / 2;
+    mesh.position.y = y;
+    vaseGroup.add(mesh);
+    return mesh;
+  }
+
+  // Polished mouth, neck bands, shoulder and foot details.
+  addRing(0.615, 0.045, 1.205, brightCopper);
+  addRing(0.405, 0.022, 1.075, darkEtch);
+  addRing(0.385, 0.018, 0.91, brightCopper);
+  addRing(0.405, 0.018, 0.47, darkEtch);
+  addRing(0.48, 0.022, 0.32, brightCopper);
+  addRing(1.075, 0.018, -0.40, darkEtch);
+  addRing(0.94, 0.018, -0.77, brightCopper);
+  addRing(0.49, 0.025, -1.39, brightCopper);
+
+  // Raised foot and a fine dark engraved line around its edge.
+  const foot = new THREE.Mesh(
+    new THREE.LatheGeometry([
+      new THREE.Vector2(0.34, -1.53),
+      new THREE.Vector2(0.46, -1.53),
+      new THREE.Vector2(0.51, -1.49),
+      new THREE.Vector2(0.48, -1.43),
+      new THREE.Vector2(0.39, -1.40)
+    ], 100), brightCopper
+  );
+  vaseGroup.add(foot);
+  addRing(0.46, 0.018, -1.50, darkEtch);
+
+  // Tiny repoussé dots follow the rounded belly and the neck.
+  const dotGeometry = new THREE.SphereGeometry(0.022, 10, 10);
+  const dotRows = [
+    { radius: 1.075, y: -0.35, count: 64, size: 1 },
+    { radius: 1.00, y: -0.08, count: 60, size: 0.82 },
+    { radius: 0.88, y: -0.68, count: 54, size: 0.78 },
+    { radius: 0.39, y: 0.70, count: 30, size: 0.7 }
+  ];
+  dotRows.forEach(row => {
+    for (let i = 0; i < row.count; i++) {
+      const a = (i / row.count) * Math.PI * 2;
+      const dot = new THREE.Mesh(dotGeometry, i % 4 === 0 ? brightCopper : darkEtch);
+      dot.position.set(Math.cos(a) * row.radius, row.y, Math.sin(a) * row.radius);
+      dot.scale.setScalar(row.size);
+      vaseGroup.add(dot);
+    }
+  });
+
+  // Floral rosettes evoke traditional hand-engraved Persian copperwork.
+  for (let k = 0; k < 11; k++) {
+    const angle = Math.PI + (k - 5) * 0.16;
+    const radius = 1.075;
+    const flower = new THREE.Group();
+    flower.position.set(Math.cos(angle) * radius, -0.34, Math.sin(angle) * radius);
+    flower.lookAt(0, -0.34, 0);
+    for (let j = 0; j < 8; j++) {
+      const petal = new THREE.Mesh(
+        new THREE.SphereGeometry(0.043, 12, 10), brightCopper
+      );
+      const a = j * Math.PI / 4;
+      petal.position.set(Math.cos(a) * 0.058, Math.sin(a) * 0.058, 0);
+      petal.scale.set(1, 0.7, 0.32);
+      flower.add(petal);
+    }
+    flower.add(new THREE.Mesh(new THREE.SphereGeometry(0.023, 10, 10), darkEtch));
+    vaseGroup.add(flower);
+  }
+
+  const motePositions = [];
+  for (let i = 0; i < 110; i++) {
+    const a = Math.random() * Math.PI * 2;
+    const r = 2.1 + Math.random() * 1.8;
+    motePositions.push(Math.cos(a) * r, (Math.random() - 0.5) * 3.8, Math.sin(a) * r);
+  }
+  const moteGeometry = new THREE.BufferGeometry();
+  moteGeometry.setAttribute("position", new THREE.Float32BufferAttribute(motePositions, 3));
+  const motes = new THREE.Points(moteGeometry, new THREE.PointsMaterial({
+    color: 0xe7b878, size: 0.018, transparent: true, opacity: 0.48
+  }));
+  scene.add(motes);
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function animate() {
+    requestAnimationFrame(animate);
+    if (!reducedMotion) {
+      vaseGroup.rotation.y += 0.0018;
+      vaseGroup.position.y = -0.02 + Math.sin(Date.now() * 0.00065) * 0.025;
+      motes.rotation.y -= 0.00018;
+    }
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  function resizeScene() {
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    if (!width || !height) return;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height, false);
+  }
+  window.addEventListener("resize", resizeScene);
+  resizeScene();
+}
+
+</script>
+
+
+</body>
+
+</html>

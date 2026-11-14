@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>حساب کاربری</title>
+<style>
+body{font-family:tahoma;background:#f3f4f6;padding:25px}
+.box{max-width:420px;margin:30px auto;background:white;padding:25px;border-radius:15px}
+input,button{width:100%;padding:12px;margin:8px 0;box-sizing:border-box}
+button{background:#111827;color:white;border:0;border-radius:8px;cursor:pointer}
+h2{text-align:center}
+.msg{color:red;text-align:center}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>ایجاد حساب کاربری</h2>
+<form id="register">
+<input name="name" placeholder="نام شما" required>
+<input name="email" type="email" placeholder="ایمیل" required>
+<input name="password" type="password" minlength="8" placeholder="رمز (حداقل ۸ کاراکتر)" required>
+<button>ثبت نام</button>
+</form>
+<hr>
+<h2>ورود به حساب</h2>
+<form id="login">
+<input name="email" type="email" placeholder="ایمیل" required>
+<input name="password" type="password" placeholder="رمز عبور" required>
+<button>ورود</button>
+</form>
+<p class="msg" id="message"></p>
+<a href="/">بازگشت به سایت</a>
+</div>
+<script>
+const msg=document.getElementById("message");
+
+async function api(url,data){
+ const r=await fetch(url,{
+  method:"POST",
+  headers:{"Content-Type":"application/json"},
+  body:JSON.stringify(data)
+ });
+ const j=await r.json();
+ if(!r.ok)throw Error(j.error||"خطا");
+ return j;
+}
+
+document.getElementById("register").onsubmit=async e=>{
+ e.preventDefault();
+ const f=new FormData(e.target);
+ try{
+  await api("/api/register",Object.fromEntries(f));
+  msg.style.color="green";
+  msg.textContent="ثبت نام موفق! اکنون وارد شوید.";
+  e.target.reset();
+ }catch(err){msg.textContent=err.message}
+};
+
+document.getElementById("login").onsubmit=async e=>{
+ e.preventDefault();
+ const f=new FormData(e.target);
+ try{
+  const result=await api("/api/login",Object.fromEntries(f));
+  msg.style.color="green";
+  msg.textContent="ورود موفق";
+  if(result.user.role==="admin")
+   location.href="/admin.html";
+  else
+   location.href="/";
+ }catch(err){msg.textContent=err.message}
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>پنل مدیریت</title>
+<style>
+body{font-family:tahoma;background:#f3f4f6;padding:20px}
+.box{max-width:900px;margin:auto;background:white;padding:20px;border-radius:12px}
+input,textarea,button{padding:10px;margin:5px;box-sizing:border-box}
+input,textarea{width:100%}
+button{cursor:pointer;background:#111827;color:white;border:0;border-radius:6px}
+#adminMain{display:none}
+.item{padding:12px;border:1px solid #ddd;margin:10px 0;border-radius:8px}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>ورود مدیر</h2>
+<form id="loginForm">
+<input name="email" type="email" placeholder="ایمیل مدیر" required>
+<input name="password" type="password" placeholder="رمز مدیر" required>
+<button>ورود به پنل</button>
+</form>
+<p id="message"></p>
+
+<div id="adminMain">
+<hr>
+<h2>مدیریت محصولات</h2>
+<button id="logout">خروج از پنل</button>
+
+<form id="productForm">
+<input name="name" placeholder="نام محصول" required>
+<input name="category" placeholder="دسته بندی">
+<input name="price" type="number" placeholder="قیمت">
+<input name="stock" type="number" placeholder="موجودی">
+<textarea name="description" placeholder="توضیحات"></textarea>
+<input name="image" placeholder="آدرس تصویر">
+<label><input name="active" type="checkbox"> فعال باشد</label>
+<button>ذخیره محصول</button>
+</form>
+
+<div id="products"></div>
+</div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
